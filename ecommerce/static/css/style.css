@@ -1,0 +1,20 @@
+body
+{
+background-color:#07e8f0;
+font-family: 'Zilla Slab', serif;}
+
+
+
+ .footer
+ {
+ height:40px;
+ width:100%;
+ background-color:lightgray;
+ position:fixed;
+ bottom:0;
+ left:0;
+ text-align:center;
+ }
+ .form-control
+ {
+ width:50%;}

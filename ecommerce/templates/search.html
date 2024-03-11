@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+<div class="container-fluid mt-3" style="margin-bottom:100px;">
+    <h3 class="text-center fw=bold">{{c.name}}</h3>
+
+    <p style="text-align:justify;line-height:2">{{c.desc}}</p>
+</div>
+
+<div class="container-fluid" style="margin-bottom:180px;">
+  <div class="row">
+    {% if b %}
+    <h3>You have searched for {{q}}</h3>
+
+    {% for i in b %}
+      <div class="col-sm-4">
+        <div class="card" style="width: 30rem;">
+          <img src="{{ i.image.url }}" height="200px" width="100%" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ i.name }}</h5>
+              <h6 class="card-title text-center">{{ i.price}}</h6>
+            <a href="{% url 'shop:details' i.name %}" class="btn btn-warning" style="position:relative; left:41%;">Details</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    {% else %}
+  </div>
+<h2>Results not found</h2>
+</div>
+{% endif %}
+
+
+{% endblock %}
